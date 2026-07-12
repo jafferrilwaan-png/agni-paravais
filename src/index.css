@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@400;500;600;800;900&family=JetBrains+Mono:wght@400;700&family=Mukta+Malar:wght@700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cinzel", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+@keyframes slide-down {
+  0% { transform: translateY(-100%) scale(0.9); opacity: 0; }
+  15% { transform: translateY(0) scale(1.05); opacity: 1; }
+  25% { transform: translateY(0) scale(1); opacity: 1; }
+  85% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-120%) scale(0.95); opacity: 0; }
+}
+
+@keyframes ken-burns {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.12) rotate(1deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes divine-float {
+  0%, 100% { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+  25% { opacity: 0.6; }
+  50% { transform: translateY(-40px) translateX(20px) scale(1.2); opacity: 0.3; }
+  75% { opacity: 0.6; }
+}
+
+@keyframes mystical-pulse {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 0.25; transform: scale(1.05); }
+}
+
+@keyframes mystic-drift {
+  0% { transform: translate(-50%, 20px) scale(0.9); opacity: 0; }
+  15% { transform: translate(-50%, 0) scale(1); opacity: 1; }
+  85% { transform: translate(-50%, 0) scale(1); opacity: 1; }
+  100% { transform: translate(-50%, -20px) scale(0.9); opacity: 0; }
+}
+
+.animate-mystic-drift {
+  animation: mystic-drift 4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes fade-in-out {
+  0% { opacity: 0; transform: translateY(10px); }
+  15% { opacity: 1; transform: translateY(0); }
+  85% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+.animate-fade-in-out {
+  animation: fade-in-out 3s ease-in-out forwards;
+}
+
+.animate-slide-down {
+  animation: slide-down 4.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.animate-ken-burns {
+  animation: ken-burns 30s ease-in-out infinite;
+}
+
+.animate-divine-float {
+  animation: divine-float linear infinite;
+}
+
+.animate-mystical-pulse {
+  animation: mystical-pulse 8s ease-in-out infinite;
+}
+
+.clip-temple {
+  clip-path: polygon(50% 0%, 80% 10%, 80% 30%, 95% 40%, 95% 60%, 100% 70%, 100% 100%, 0% 100%, 0% 70%, 5% 60%, 5% 40%, 20% 30%, 20% 10%);
+}
+
+@keyframes parallax-slow {
+  0% { transform: scale(1.1) translateX(0); }
+  50% { transform: scale(1.1) translateX(-2%); }
+  100% { transform: scale(1.1) translateX(0); }
+}
+
+.animate-parallax-slow {
+  animation: parallax-slow 20s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 204, 51, 0.4);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 204, 51, 0.6);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 204, 51, 0.8);
+}
+
+/* Add a visual indicator gradient to show there is more content when scrolling is necessary */
+.scroll-indicator-mask {
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+
+/* Arcade Button Click Ripple and Haptic Touch Effects */
+.arcade-ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 215, 0, 0.3) 60%, transparent 100%);
+  pointer-events: none;
+  animation: arcade-ripple-anim 0.5s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+.bg-radial-vignette {
+  background: radial-gradient(circle, transparent 20%, rgba(0, 0, 0, 0.35) 60%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+@keyframes arcade-ripple-anim {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.85;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    width: 160px;
+    height: 160px;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2.5);
+  }
+}
+

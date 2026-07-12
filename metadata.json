@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Remix: Remix: Remix: Agni Paravai",
+  "description": "An ancient Tamil temple-themed 2D side-scrolling arcade game. Fly as Agni Paravai to restore ruined temple towers, dodge pillars, pass through fire rings, and experience a live procedural Tamil instrumental soundscape (Veena, Flute, and Mridangam).",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
